@@ -159,10 +159,10 @@ internal class RedactedIrVisitor(
       classIsRedacted: Boolean
   ) {
     val irConcat = irConcat()
-    irConcat.addArgument(irString(irClass.name.asString() + "("))
     if (classIsRedacted) {
       irConcat.addArgument(irString(replacementString))
     } else {
+      irConcat.addArgument(irString(irClass.name.asString() + "("))
       var first = true
       for (property in irProperties) {
         if (!first) irConcat.addArgument(irString(", "))
@@ -189,8 +189,8 @@ internal class RedactedIrVisitor(
         }
         first = false
       }
+      irConcat.addArgument(irString(")"))
     }
-    irConcat.addArgument(irString(")"))
     +irReturn(irConcat)
   }
 
