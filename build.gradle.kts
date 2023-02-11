@@ -9,7 +9,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 buildscript {
   dependencies {
     // Include our included build
-    classpath("dev.zacsweers.redacted:redacted-compiler-plugin-gradle")
+    classpath("io.github.zjns.redacted:redacted-compiler-plugin-gradle")
   }
 }
 
@@ -88,7 +88,7 @@ subprojects {
   }
 
   plugins.withId("com.vanniktech.maven.publish") {
-    configure<MavenPublishBaseExtension> { publishToMavenCentral(automaticRelease = true) }
+    configure<MavenPublishBaseExtension> { publishToMavenCentral(host = "S01", automaticRelease = true) }
 
     // configuration required to produce unique META-INF/*.kotlin_module file names
     tasks.withType<KotlinCompile>().configureEach {

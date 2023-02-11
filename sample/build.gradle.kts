@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
   kotlin("multiplatform")
-  id("dev.zacsweers.redacted")
+  id("io.github.zjns.redacted")
 }
 
 kotlin {
@@ -27,11 +27,11 @@ kotlin {
 
 configurations.configureEach {
   resolutionStrategy.dependencySubstitution {
-    substitute(module("dev.zacsweers.redacted:redacted-compiler-plugin-annotations"))
+    substitute(module("io.github.zjns.redacted:redacted-compiler-plugin-annotations"))
         .using(project(":redacted-compiler-plugin-annotations"))
-    substitute(module("dev.zacsweers.redacted:redacted-compiler-plugin-annotations-jvm"))
+    substitute(module("io.github.zjns.redacted:redacted-compiler-plugin-annotations-jvm"))
         .using(project(":redacted-compiler-plugin-annotations"))
-    substitute(module("dev.zacsweers.redacted:redacted-compiler-plugin"))
+    substitute(module("io.github.zjns.redacted:redacted-compiler-plugin"))
         .using(project(":redacted-compiler-plugin"))
   }
 }

@@ -38,7 +38,7 @@ tasks.withType<KotlinCompile>().configureEach {
 gradlePlugin {
   plugins {
     create("redactedPlugin") {
-      id = "dev.zacsweers.redacted"
+      id = "io.github.zjns.redacted"
       implementationClass = "dev.zacsweers.redacted.gradle.RedactedGradleSubplugin"
     }
   }
@@ -73,7 +73,7 @@ dependencies {
   compileOnly(libs.kotlin.gradlePlugin.api)
 }
 
-configure<MavenPublishBaseExtension> { publishToMavenCentral(automaticRelease = true) }
+configure<MavenPublishBaseExtension> { publishToMavenCentral(host = "S01", automaticRelease = true) }
 
 // configuration required to produce unique META-INF/*.kotlin_module file names
 tasks.withType<KotlinCompile>().configureEach {

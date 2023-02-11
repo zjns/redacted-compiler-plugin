@@ -34,7 +34,7 @@ public class RedactedGradleSubplugin : KotlinCompilerPluginSupportPlugin {
 
   override fun getPluginArtifact(): SubpluginArtifact =
       SubpluginArtifact(
-          groupId = "dev.zacsweers.redacted",
+          groupId = "io.github.zjns.redacted",
           artifactId = "redacted-compiler-plugin",
           version = VERSION)
 
@@ -60,7 +60,7 @@ public class RedactedGradleSubplugin : KotlinCompilerPluginSupportPlugin {
               .dependencies
               .add(
                   project.dependencies.create(
-                      "dev.zacsweers.redacted:redacted-compiler-plugin-annotations:$VERSION"))
+                      "io.github.zjns.redacted:redacted-compiler-plugin-annotations:$VERSION"))
         }
         else -> {
           project.configurations
@@ -68,7 +68,7 @@ public class RedactedGradleSubplugin : KotlinCompilerPluginSupportPlugin {
               .dependencies
               .add(
                   project.dependencies.create(
-                      "dev.zacsweers.redacted:redacted-compiler-plugin-annotations:$VERSION"))
+                      "io.github.zjns.redacted:redacted-compiler-plugin-annotations:$VERSION"))
         }
       }
     }

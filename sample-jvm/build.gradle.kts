@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   kotlin("jvm")
-  id("dev.zacsweers.redacted")
+  id("io.github.zjns.redacted")
 }
 
 tasks.withType<KotlinCompile>().configureEach {
@@ -23,11 +23,11 @@ dependencies {
 
 configurations.configureEach {
   resolutionStrategy.dependencySubstitution {
-    substitute(module("dev.zacsweers.redacted:redacted-compiler-plugin-annotations"))
+    substitute(module("io.github.zjns.redacted:redacted-compiler-plugin-annotations"))
         .using(project(":redacted-compiler-plugin-annotations"))
-    substitute(module("dev.zacsweers.redacted:redacted-compiler-plugin-annotations-jvm"))
+    substitute(module("io.github.zjns.redacted:redacted-compiler-plugin-annotations-jvm"))
         .using(project(":redacted-compiler-plugin-annotations"))
-    substitute(module("dev.zacsweers.redacted:redacted-compiler-plugin"))
+    substitute(module("io.github.zjns.redacted:redacted-compiler-plugin"))
         .using(project(":redacted-compiler-plugin"))
   }
 }

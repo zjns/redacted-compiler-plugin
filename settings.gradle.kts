@@ -25,7 +25,7 @@ include(":sample-jvm")
 
 includeBuild("redacted-compiler-plugin-gradle") {
   dependencySubstitution {
-    substitute(module("dev.zacsweers.redacted:redacted-compiler-plugin-gradle")).using(project(":"))
+    substitute(module("io.github.zjns.redacted:redacted-compiler-plugin-gradle")).using(project(":"))
   }
 }
 
