@@ -55,7 +55,7 @@ jobs:
 
   publish:
     runs-on: macos-11
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && github.repository == 'zacsweers/redacted-compiler-plugin'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && github.repository == 'zjns/redacted-compiler-plugin'
     needs: [ jvm, all-platforms ]
 
     steps:
